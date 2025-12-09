@@ -1,0 +1,100 @@
+
+:root {
+  --primary: #6366f1;
+  --dark: #1e293b;
+  --light: #f8fafc;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: 'Poppins', sans-serif; 
+  background: var(--light); 
+  color: #333; 
+  transition: 0.4s; 
+  padding-top: 80px; /* space for fixed navbar */
+}
+body.dark { background: #0f172a; color: #e2e8f0; }
+
+/* Fixed Horizontal Navbar */
+.navbar {
+  background: var(--dark);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-container h3 {
+  color: white;
+  font-size: 1.6rem;
+}
+
+.nav-container ul {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-container a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-container a:hover,
+.nav-container a.active {
+  color: var(--primary);
+}
+
+.nav-container a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s;
+}
+
+.nav-container a:hover::after,
+.nav-container a.active::after {
+  width: 100%;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Rest of your existing styles remain same */
+.container { max-width: 1100px; margin: 40px auto; padding: 2rem; text-align: center; }
+.profile-pic { width: 180px; height: 180px; border-radius: 50%; border: 6px solid var(--primary); margin: 20px 0; }
+.bio-table { margin: 40px auto; max-width: 800px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+body.dark .bio-table { background: #1e293b; }
+.bio-table table { width: 100%; border-collapse: collapse; text-align: left; }
+.bio-table th { background: var(--primary); color: white; padding: 15px; }
+.bio-table td { padding: 15px; background: #f8f9fa; }
+body.dark .bio-table td { background: #334155; }
+
+.btn { display: inline-block; background: var(--primary); color: white; padding: 12px 32px; border-radius: 50px; text-decoration: none; margin-top: 20px; }
+.btn:hover { background: #4f46e5; transform: translateY(-3px); }
+
+footer { text-align: center; padding: 2rem; background: var(--dark); color: white; margin-top: 4rem; }
